@@ -1,5 +1,5 @@
 # SIHE: estimation of building height from a single street view image 
-This repository contains the Python implementation of a building height estimation method.
+This repository contains the Python implementation of a building height estimation method. The code will be available soon.
 
 # Introduction
 SIHE is a tool to estimate building height from a single street view image based on single view metrology. In the approach, geometric information and features, such as vanishing points and vertical lines, are automatically extracted through deep neural networks and are processed for height estimation. Furthermore, a simulation system is included in this repository for theoretically analysing how the factors influence single-view height measurement. The uncertainty of height can be calculated and simulated using the system.
