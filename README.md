@@ -1,8 +1,12 @@
 # SIHE: estimation of building height from a single street view image 
-This repository contains the Python implementation of the building height estimation method in the paper: *Yan Y, Huang B. ["Estimation of building height using a single street view image via deep neural networks"](https://www.sciencedirect.com/science/article/abs/pii/S0924271622002106)*. ISPRS Journal of Photogrammetry and Remote Sensing, 2022, 192: 83-98.
+This repository contains the Python implementation of the building height estimation method 
+in the paper: *Yan Y, Huang B. ["Estimation of building height using a single street view image via deep neural networks"](https://www.sciencedirect.com/science/article/abs/pii/S0924271622002106)*. ISPRS Journal of Photogrammetry and Remote Sensing, 2022, 192: 83-98.
 
 # Introduction
-SIHE (Single Image Height Estimation) is a tool designed to estimate building heights from a single street view image, utilizing single-view metrology principles. By harnessing geometric information and features like vanishing points, line segments, and semantic masks, which can be automatically extracted through deep neural networks, SIHE can determines building vertical lines and building heights.
+SIHE (Single Image Height Estimation) is a tool designed to estimate building heights from a single street view image, 
+utilizing single-view metrology principles. By harnessing geometric information and features like vanishing points, 
+line segments, and semantic masks, which can be automatically extracted through deep neural networks, SIHE can 
+determines building vertical lines and building heights.
 
 # Setup
 Simply clone this repo or download the zip file onto your local machine, then install `requirements.txt` file to install relevant python packages:
@@ -36,7 +40,8 @@ lineRefinement.py               # functions for line segment refinement
 ```
 
 # Get started
-Use `demo.py` to run the code with sample data and default parameters. Execute the following command in the terminal, or add `img_path config_fname` in the Parameters when run `demo.py` in PyCharm:
+Use `demo.py` to run the code with sample data and default parameters. Execute the following command in the terminal, 
+or add `img_path config_fname` in the Parameters when run `demo.py` in PyCharm:
 ```bash
 python ./demo.py ./data/imgs/ ./config/estimation_config.ini
 ```
@@ -71,10 +76,11 @@ height measurement (as in `./data/lines`, `./data/segs`, `./data/vpts`).
   
 The installation and usage of the networks can be referred to their official 
 repository. More details about the setup for this study can be referred to our paper.
-In addition, other networks can be tried for better results.
+In addition, other networks can be tried for better results. If so, the config file `estimation_config.ini` 
+may need to be modified to align with the data, such as the segmentation labels. 
 
-When the above mentioned result files are prepared, the config file `estimation_config.ini` 
-can be modified in accordance with the data and the `demo.py` can be used to estimate heights.
+When the above mentioned result files are prepared, the `demo.py` can be used to estimate heights. 
+
 
 # Example results
 
