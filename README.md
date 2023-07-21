@@ -1,5 +1,6 @@
 # SIHE: estimation of building height from a single street view image 
-This repository contains the Python implementation of a building height estimation method. The code will be available soon.
+This repository contains the Python implementation of the building height estimation method in the paper.
+This repository contains the Python implementation of the building height estimation method in the paper: *Yan Y, Huang B. ["Estimation of building height using a single street view image via deep neural networks"](https://www.sciencedirect.com/science/article/abs/pii/S0924271622002106)*. ISPRS Journal of Photogrammetry and Remote Sensing, 2022, 192: 83-98.
 
 # Introduction
 SIHE is a tool to estimate building height from a single street view image based on single view metrology. In the approach, geometric information and features, such as vanishing points and vertical lines, are automatically extracted through deep neural networks and are processed for height estimation. Furthermore, a simulation system is included in this repository for theoretically analysing how the factors influence single-view height measurement. The uncertainty of height can be calculated and simulated using the system.
@@ -13,7 +14,7 @@ $ python install -r requirements.txt
 ```
 
 # Code Structure
-Below is a quick overview of the function of each file. The code will be available soon.
+Below is a quick overview of the function of each file.
 
 ```bash
 ########################### height estimation code ###########################    
@@ -35,7 +36,7 @@ lineDrawingConfig.py            # script for line visualization configuration
 lineRefinement.py               # functions for line segment refinement
 ```
 
-# How to use
+# Get started
 Use `demo.py` to run the code with sample data and default parameters. Execute the following command in the terminal, or add `img_path config_fname` in the Parameters when run `demo.py` in PyCharm:
 ```bash
 python ./demo.py ./data/imgs/ ./config/estimation_config.ini
@@ -56,6 +57,7 @@ or calculated using pitch angle (when the rotation angles of the image are known
 from the data source, e.g. Google Street View). The setting of the two parameters
 depends on how vanishing points are obtained.
 
+# How to use
 In the estimation of building height, semantic segmentation map of the street view 
 image, line segments, and vanishing points are used. Since they can be obtained 
 through different neural networks, the codes of the networks are not integrated 
@@ -63,10 +65,32 @@ in the main stream of height estimation. Instead, the street view images are
 separately processed by three networks, and the result files are prepared for later
 height measurement (as in `./data/lines`, `./data/segs`, `./data/vpts`).
 
+* line segment detection: use LCNN network [1]
+* semantic segmentation: use MMSegmentation toolbox [2]
+* vanishing point detection: use NeurVPS network [3] with newly-trained model
+  (in `./misc/vps_models/`)
+  
+The installation and usage of the networks can be referred to their official 
+repository. More details about the setup for this study can be referred to our paper.
+In addition, other networks can be tried for better results.
+
 When the above mentioned result files are prepared, the config file `estimation_config.ini` 
 can be modified in accordance with the data and the `demo.py` can be used to estimate heights.
 
 # Example results
-![fig.1](./misc/figs/00000_1.png) ![fig.2](./misc/figs/00000_2.png) ![fig.3](./misc/figs/00002_1.png)        |
+
+| Fig. 1 | Fig. 2 |
+| ---------------------------------- | ----------------------------------  |
+| ![fig.1](./misc/figs/0001.png)              | ![fig.2](./misc/figs/0002.png)                                     |
+
+
+
+# Acknowledgements
+We appreciate the open source of the following projects: 
+
+[1] [lcnn](https://github.com/zhou13/lcnn) \
+[2] [mmsegmentation](https://github.com/open-mmlab/mmsegmentation) \
+[3] [neurvps](https://github.com/zhou13/neurvps)
+
 
 
