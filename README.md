@@ -1,5 +1,4 @@
 # SIHE: estimation of building height from a single street view image 
-This repository contains the Python implementation of the building height estimation method in the paper.
 This repository contains the Python implementation of the building height estimation method in the paper: *Yan Y, Huang B. ["Estimation of building height using a single street view image via deep neural networks"](https://www.sciencedirect.com/science/article/abs/pii/S0924271622002106)*. ISPRS Journal of Photogrammetry and Remote Sensing, 2022, 192: 83-98.
 
 # Introduction
