@@ -1,0 +1,40 @@
+io:
+  augmentation_level: 2
+  datadir: data/gsv/
+  dataset: Wireframe
+  focal_length: 1.0
+  logdir: logs/
+  num_vpts: 3
+  num_workers: 6
+  resume_from: 
+  tensorboard_port: 0
+  validation_debug: 120
+  validation_interval: 12000
+model:
+  backbone: stacked_hourglass
+  batch_size: 12
+  conic_6x: false
+  depth: 4
+  fc_channel: 1024
+  im2col_step: 11
+  multires:
+  - 0.0013457768043554
+  - 0.0051941870036646
+  - 0.02004838034795
+  - 0.0774278195486317
+  - 0.299564810864565
+  num_blocks: 1
+  num_stacks: 1
+  output_stride: 4
+  smp_multiplier: 2
+  smp_neg: 1
+  smp_pos: 1
+  smp_rnd: 3
+  upsample_scale: 1
+optim:
+  amsgrad: true
+  lr: 0.0001
+  lr_decay_epoch: 5
+  max_epoch: 36
+  name: Adam
+  weight_decay: 1.0e-05
